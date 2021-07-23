@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main # Default release branch
+    paths:
+      - 'src/**'      
 jobs:
   deploy:
     if: ${{ false }} # disable for now
