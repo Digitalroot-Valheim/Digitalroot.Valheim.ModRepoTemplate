@@ -12,6 +12,8 @@ jobs:
     permissions:
       packages: write
       contents: read
+    env:
+      PROJ: Digitalroot.Valheim.ModName           
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-dotnet@v1.8.1
@@ -20,7 +22,6 @@ jobs:
           source-url: https://nuget.pkg.github.com/Digitalroot-Valheim/index.json
         env:
           NUGET_AUTH_TOKEN: ${{secrets.NUGET_PAT}}
-          PROJ: Digitalroot.Valheim.ModName
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: List files in the repository
