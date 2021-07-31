@@ -8,13 +8,14 @@ on:
       - '.github/workflows/**'   
 jobs:
   deploy:
+    if: ${{ false }} # disable for now
     runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
     env:
-      SLN_FILE_NAME: Digitalroot.Valheim.Common.Utils.sln
-      PROJ: Digitalroot.Valheim.Common.Utils  
+      SLN_FILE_NAME: Digitalroot.Valheim.ModName.sln
+      PROJ: Digitalroot.Valheim.ModName  
       NUGET_AUTH_TOKEN: ${{secrets.NUGET_PAT}}
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
       DOTNET_CLI_TELEMETRY_OPTOUT: true
