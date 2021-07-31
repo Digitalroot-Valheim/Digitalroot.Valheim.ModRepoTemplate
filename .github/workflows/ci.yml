@@ -7,6 +7,7 @@ on:
   pull_request:
 jobs:
   build:
+    if: ${{ false }} # disable for now
     runs-on: ubuntu-latest
     env:
       SLN_FILE_NAME: Digitalroot.Valheim.Common.Utils.sln
