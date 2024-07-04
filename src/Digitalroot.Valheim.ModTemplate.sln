@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{E64D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{1960DCD1-3C51-48FF-BFF8-5FE4C3CBABB2}"
 	ProjectSection(SolutionItems) = preProject
-		..\.github\workflows\discord.yml = ..\.github\workflows\discord.yml
+		..\.github\workflows\nuget.autoupdate.yml = ..\.github\workflows\nuget.autoupdate.yml
 		..\.github\workflows\release.yml = ..\.github\workflows\release.yml
 	EndProjectSection
 EndProject
@@ -25,7 +25,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{28344659-B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ico", "ico", "{C66A8E3B-31DB-4296-9DF3-78F55E2580E5}"
 	ProjectSection(SolutionItems) = preProject
-		ico\icon.png = ico\icon.png
 		ico\icon_greendot.gif = ico\icon_greendot.gif
 		ico\icon_reddot.gif = ico\icon_reddot.gif
 		ico\icon_yellowdot.gif = ico\icon_yellowdot.gif

@@ -3,11 +3,14 @@ name: Release
 concurrency: ci-${{ github.ref }}
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ] # Default release branch
-    paths:
-      - 'src/**'   
-      - '.github/workflows/**' 
+    paths-ignore:
+      - '.github/**'
+      - 'docs/**'
+      - '**/.ts/**'
+      - '**/.nx/**'
 
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
@@ -21,8 +24,10 @@ jobs:
       aws-access-key-id: ${{ secrets.NUGET_S3_REPO_KEY_ID }}
       aws-secret-access-key: ${{ secrets.NUGET_S3_REPO_KEY_SECRET }}
       #nexus-api-key: ${{ secrets.NEXUS_API_KEY }}
-      #nexus-cookies-header: ${{ secrets.NEXUS_COOKIE_HEADER }}
+      #nexus-cookies-header: ${{ secrets.NEXUSMOD_SESSION_COOKIE }}
       #nuget-org-key: ${{ secrets.NUGET_ORG_PAT }}
+      #ts-api-key: ${{ secrets.TS_SERVICEACCOUNT }}
+      webhook_url: ${{ secrets.VALHEIM_DISCORD_TITANS_WEBHOOK_URL }}
 
     with:
       sln-file-name: Digitalroot.Valheim.Common.Placeholder
@@ -39,3 +44,8 @@ jobs:
       #nuget-org-upload: true
       #nexus-enable-upload: true
       #nexus-mod-id: 000
+      #ts-enable-upload: true
+      #ts-name: Placeholder
+      #ts-description: "TBD"
+      #ts-categories: "server-side client-side" #https://thunderstore.io/api/experimental/community/valheim/category/
+      #ts-dependencies: ValheimModding-Jotunn-2.20.0
