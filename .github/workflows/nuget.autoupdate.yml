@@ -1,6 +1,9 @@
-name: Automated NuGet Dependency Updates
+name: Auto Update
 
-concurrency: ci-${{ github.ref }}
+concurrency:
+  # Cancel in-progress jobs or runs for the current workflow when new runs are enqueued
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 on:
   workflow_dispatch:
@@ -14,6 +17,7 @@ env:
 
 jobs:
   call-workflow-nuget-autoupdate:
+    if: ${{ false }} # disable for now
     uses: Digitalroot-Valheim/.github/.github/workflows/nuget.autoupdate.yml@main
     secrets:
       github-pat: ${{ secrets.AUTOMATED_DEPENDENCY_UPDATES_TOKEN }}
